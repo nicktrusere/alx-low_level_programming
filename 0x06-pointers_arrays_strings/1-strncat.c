@@ -2,7 +2,7 @@
 
 /**
  * _strncat - joins two strings with n bytes
- * @dest: copy
+ * @dest: copy from
  * @src: copy from
  * @n: number of char to be copied
  * Return: dest
@@ -13,7 +13,7 @@ char *_strncat(char *dest, char *src, int n)
 	int j;
 
 	i = 0;
-	while (dest[i] != '\n')
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
