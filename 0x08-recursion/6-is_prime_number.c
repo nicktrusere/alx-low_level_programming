@@ -2,8 +2,9 @@
 
 int check_prime(int, int);
 /**
- * is_prime_number - prime identifier
+ * is_prime_number - check if number is prime or not.
  * @n: param number
+ * Return: 0 if not prime, 1 if prime
  */
 int is_prime_number(int n)
 {
@@ -11,7 +12,6 @@ int is_prime_number(int n)
 }
 
 /**
- * is_prime_number - prime identifier
  * check_prime - it checks prime numbers
  * @n: is number
  * @i: iterator
