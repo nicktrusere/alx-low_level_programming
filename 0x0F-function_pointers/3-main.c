@@ -5,7 +5,7 @@
 
 /**
  * main - Prints the results of simple operations.
- * @argc: The number of arguments input to the program.
+ * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
  *
  * Return: Always 0.
@@ -20,7 +20,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	num1 = atoi(argv[i]);
+	num1 = atoi(argv[1]);
 	op = argv[2];
 	num2 = atoi(argv[3]);
 	if (get_op_func(op) == NULL || op[1] != '\0')
