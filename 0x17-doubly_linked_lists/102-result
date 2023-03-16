@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+void main()
+{
+int a = 1;
+int b = 1;
+int currentNumber;
+int currentPalin=0;
+
+while (a<100){
+
+        while (b<100){
+            currentNumber = a*b;
+            if (currentNumber == reverse(currentNumber) ){
+                if (currentNumber>currentPalin){
+                        currentPalin = currentNumber;                       
+                    }
+
+            }
+            b = b+1;
+
+        }
+        b = 1; 
+        a = a +1;
+    }
+if (currentPalin==0){
+    printf("No Palindrome exits in this range");
+}
+else {
+    printf ("Largest palindrome is %d  \n", currentPalin);
+}
+
+getchar();
+
+}
+
+int reverse(int n){
+    int reverse = 0;
+
+
+
+ while (n != 0)
+{
+    reverse = reverse * 10;
+    reverse = reverse + n%10;
+    n = n/10;
+}
+
+return reverse;
+
+
+}
