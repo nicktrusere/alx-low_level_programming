@@ -1,26 +1,31 @@
 #include "lists.h"
 
 /**
- *dlistint_len - prints all the elements of a list
- *@h: pointer to the head of the list
- *
- *Return: length of list
+ *add_dnodeint - add node at beginning of list
+ *@head: pointer to head pointer
+ *@n: data in node
+ *Return: pointer to new node
  */
 
-size_t dlistint_len(const dlistint_t *h)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	int c = 0;
+	dlistint_t *new_node;
 
-	if (h == NULL)
+	new_node = (dlistint_t *)malloc(sizeof(dlistint_t));
+
+	if (new_node == NULL)
 	{
-		printf("No elements in this list\n");
-		return (0);
+		return (NULL);
 	}
 
-	while (h != NULL)
+	new_node->n = n;
+	new_node->next = *head;
+	new_node->prev = NULL;
+
+	if (*head != NULL)
 	{
-		h = h->next;
-		c++;
+		(*head)->prev = new_node;
 	}
-	return (c);
+	*head = new_node;
+	return (new_node);
 }
